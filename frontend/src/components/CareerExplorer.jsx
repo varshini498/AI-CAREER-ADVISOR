@@ -6,6 +6,7 @@ const API_BASE_URL = 'http://localhost:4000/api';
 const CareerExplorer = ({ user }) => {
   const [careers, setCareers] = useState([]);
   const [roadmap, setRoadmap] = useState(null);
+  const [skillGap, setSkillGap] = useState(null);
 
   useEffect(() => {
     const fetchCareers = async () => {
@@ -16,7 +17,11 @@ const CareerExplorer = ({ user }) => {
         console.error('Failed to fetch careers:', error);
       }
     };
-    fetchCareers();
+    if (user && user.skills && user.skills.length > 0) {
+      fetchCareers();
+    } else {
+      setCareers([]);
+    }
   }, [user]);
 
   const generateRoadmap = async (careerId) => {
@@ -29,26 +34,70 @@ const CareerExplorer = ({ user }) => {
     }
   };
 
+  const analyzeSkillGap = async (careerId) => {
+    try {
+      const res = await axios.get(`${API_BASE_URL}/ai/skill-gap/${user.id}/${careerId}`);
+      setSkillGap(res.data);
+    } catch (error) {
+      console.error('Failed to analyze skill gap:', error);
+    }
+  };
+
   return (
     <div>
       <h1>Career Explorer</h1>
       <p style={{ color: '#a3a3a3', marginBottom: '30px' }}>Discover personalized career paths based on your skills and interests.</p>
       
-      <div className="card">
-        <h2>Recommended Roles</h2>
-        {careers.map(career => (
-          <div key={career.id} style={{ backgroundColor: '#1a2434', borderRadius: '8px', padding: '16px', marginBottom: '12px', border: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
-              <h3 style={{ fontSize: '18px', color: '#f8fafc' }}>{career.title}</h3>
-              <p style={{ fontSize: '14px', color: '#94a3b8' }}>Skills: {career.skills.join(', ')}</p>
+      {user && user.skills && user.skills.length > 0 ? (
+        <div className="card">
+          <h2>Recommended Roles</h2>
+          {careers.map(career => (
+            <div key={career.id} style={{ backgroundColor: '#1a2434', borderRadius: '8px', padding: '16px', marginBottom: '12px', border: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <h3 style={{ fontSize: '18px', color: '#f8fafc' }}>{career.title}</h3>
+                <p style={{ fontSize: '14px', color: '#94a3b8' }}>Skills: {career.skills.join(', ')}</p>
+              </div>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <button style={{ backgroundColor: '#f97316', color: 'white', padding: '12px 24px', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }} onClick={() => analyzeSkillGap(career.id)}>
+                  Analyze Skills
+                </button>
+                <button style={{ backgroundColor: '#6366f1', color: 'white', padding: '12px 24px', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }} onClick={() => generateRoadmap(career.id)}>
+                  Get Roadmap
+                </button>
+              </div>
             </div>
-            <button style={{ backgroundColor: '#6366f1', color: 'white', padding: '12px 24px', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }} onClick={() => generateRoadmap(career.id)}>
-              Get Roadmap
-            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="card" style={{ textAlign: 'center', padding: '40px' }}>
+          <p style={{ color: '#94a3b8', fontSize: '16px' }}>Please update your profile with your skills to see personalized career recommendations.</p>
+        </div>
+      )}
+
+      {skillGap && (
+        <div className="card" style={{ marginTop: '25px' }}>
+          <h2>Skill Gap for {skillGap.careerTitle}</h2>
+          <div className="skill-gap-container">
+            <div className="skill-gap-section">
+              <h4 style={{ color: '#34d399' }}>Skills You Have:</h4>
+              <ul className="skill-list">
+                {skillGap.presentSkills.map((skill, index) => (
+                  <li key={index}><i className="fas fa-check-circle"></i>{skill}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="skill-gap-section">
+              <h4 style={{ color: '#ef4444' }}>Skills You Need:</h4>
+              <ul className="skill-list">
+                {skillGap.missingSkills.map((skill, index) => (
+                  <li key={index}><i className="fas fa-times-circle"></i>{skill}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-        ))}
-      </div>
-      
+        </div>
+      )}
+
       {roadmap && (
         <div className="card" style={{ marginTop: '25px' }}>
           <h2>{roadmap.title}</h2>

@@ -235,6 +235,7 @@ body {
   font-size: 14px;
 }
 
+/* Enhanced Dashboard Styles */
 .dashboard-header-card {
   background-color: #1a2434;
   border-radius: 12px;
@@ -247,42 +248,67 @@ body {
   justify-content: center;
 }
 
-.readiness-section {
-  text-align: center;
+/* New Radial Progress Bar Styles */
+.readiness-section-new {
+  display: flex;
+  align-items: center;
+  gap: 30px;
   width: 100%;
 }
 
-.readiness-section h2 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #e0e7ff;
+.readiness-circle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.progress-bar-container {
-  width: 80%;
-  max-width: 400px;
-  height: 12px;
-  background-color: #334155;
-  border-radius: 6px;
-  margin: 0 auto 10px;
-  overflow: hidden;
-}
-
-.progress-bar {
+.readiness-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-color: #60a5fa;
-  border-radius: 6px;
-  transition: width 0.5s ease-in-out;
+  transform: rotate(-90deg);
 }
 
-.readiness-score {
-  font-size: 24px;
+.readiness-bg, .readiness-progress {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.readiness-bg {
+  stroke: #334155;
+}
+
+.readiness-progress {
+  stroke: #60a5fa;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.readiness-score-new {
+  font-size: 32px;
   font-weight: bold;
   color: #60a5fa;
+  position: relative;
+}
+
+.readiness-details {
+  text-align: left;
+}
+
+.readiness-details-title {
+  font-size: 20px;
+  color: #e0e7ff;
   margin-bottom: 5px;
 }
 
-.readiness-label {
+.readiness-details-label {
   font-size: 14px;
   color: #a3a3a3;
 }

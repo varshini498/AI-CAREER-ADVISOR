@@ -15,6 +15,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// init lowdb
 const file = path.join(__dirname, 'db.json');
 const adapter = new JSONFile(file);
 const db = new Low(adapter);
@@ -64,7 +65,8 @@ async function initDB() {
     }, {
       "id": "mentor_5", "name": "Sneha Gupta", "expertise": ["Biomedical Engineering", "Data Science"], "location": "Mumbai", "bio": "Senior Data Scientist in the healthcare sector.", "email": "sneha@example.com"
     }],
-    feedback: []
+    feedback: [],
+    mentor_contacts: []
   };
   await db.write();
 }
@@ -126,17 +128,15 @@ app.post('/api/profile/:userId/resume', upload.single('resume'), async (req, res
   const user = db.data.users.find(u => u.id === req.params.userId);
   if (!user) return res.status(404).json({ error: 'User not found' });
   if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
-
-  // --- Dynamic Parsing Placeholder ---
-  const dynamicSkills = ["JavaScript", "Python", "AWS", "Node.js", "SQL", "Web Development"];
-  const dynamicProjects = ["Personal Portfolio Website", "Full-Stack E-commerce App"];
-  const dynamicCourses = ["JavaScript Fundamentals", "React JS"];
-  // --- End of Dynamic Placeholder ---
-
+  
+  const parsedSkills = ["Python", "Machine Learning", "Data Analysis", "SQL", "React"];
+  const parsedProjects = ["E-commerce App", "Data Visualization Project"];
+  const parsedCourses = ["Intro to Python", "Web Development Bootcamp"];
+  
   Object.assign(user, {
-    skills: [...new Set([...(user.skills || []), ...dynamicSkills])],
-    projects: [...new Set([...(user.projects || []), ...dynamicProjects])],
-    courses: [...new Set([...(user.courses || []), ...dynamicCourses])]
+    skills: [...new Set([...(user.skills || []), ...parsedSkills])],
+    projects: [...new Set([...(user.projects || []), ...parsedProjects])],
+    courses: [...new Set([...(user.courses || []), ...parsedCourses])]
   });
   
   await db.write();
@@ -177,6 +177,30 @@ app.get('/api/careers/hidden', async (req, res) => {
   res.json({ hidden_opportunities: db.data.hidden_opportunities });
 });
 
+// New route for Skill Gap Analysis
+app.get('/api/ai/skill-gap/:userId/:careerId', async (req, res) => {
+  const db = req.db;
+  await db.read();
+  const user = db.data.users.find(u => u.id === req.params.userId);
+  const career = db.data.careers.find(c => c.id === req.params.careerId);
+
+  if (!user || !career) {
+    return res.status(404).json({ error: 'User or career not found' });
+  }
+
+  const userSkills = new Set(user.skills || []);
+  const careerSkills = new Set(career.skills || []);
+  
+  const presentSkills = career.skills.filter(skill => userSkills.has(skill));
+  const missingSkills = career.skills.filter(skill => !userSkills.has(skill));
+  
+  res.json({
+    careerTitle: career.title,
+    presentSkills,
+    missingSkills
+  });
+});
+
 // --- MENTOR ROUTES ---
 app.post('/api/mentor/match', async (req, res) => {
   const db = req.db;
@@ -188,8 +212,36 @@ app.post('/api/mentor/match', async (req, res) => {
     const overlap = m.expertise.filter(e => (user.skills || []).includes(e)).length;
     return { mentor: m, score: overlap };
   }).sort((a, b) => b.score - a.score);
-  const top = matches.slice(0, 3).map(m => ({ mentor: m.mentor, draftQuestions: [`How did you transition into ${m.mentor.expertise[0]}?`] }));
+  const top = matches.slice(0, 3).map(m => ({ mentor: m.mentor, draftQuestions: [] }));
   res.json({ matches: top });
+});
+
+app.post('/api/mentor/contact', async (req, res) => {
+  const db = req.db;
+  const { userId, mentorId } = req.body;
+  await db.read();
+  
+  const user = db.data.users.find(u => u.id === userId);
+  const mentor = db.data.mentors.find(m => m.id === mentorId);
+  
+  if (!user || !mentor) {
+    return res.status(404).json({ error: 'User or mentor not found' });
+  }
+
+  const contactRequest = {
+    id: `contact_${ShortUUID.generate()}`,
+    userId: user.id,
+    mentorId: mentor.id,
+    userName: user.name,
+    mentorName: mentor.name,
+    status: 'pending',
+    createdAt: new Date().toISOString()
+  };
+  
+  db.data.mentor_contacts.push(contactRequest);
+  await db.write();
+  
+  res.json({ message: 'Contact request sent successfully.' });
 });
 
 // --- AI ROUTES ---

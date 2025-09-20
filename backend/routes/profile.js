@@ -22,10 +22,10 @@ router.put('/:userId', async (req, res) => {
 
   Object.assign(user, {
     skills: req.body.skills || [],
+    courses: req.body.courses || [],
     projects: req.body.projects || [],
     college: req.body.college || '',
     interests: req.body.interests || [],
-    courses: req.body.courses || [],
     lastUpdated: new Date().toISOString()
   });
 
@@ -51,29 +51,10 @@ router.post('/:userId/resume', upload.single('resume'), async (req, res) => {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
-  // --- START: Dynamic Resume Parsing Placeholder ---
-  // These are now added to the user's existing skills
-  const parsedData = {
-    skills: ["Python", "Machine Learning", "Data Analysis", "SQL"],
-    projects: ["Predictive Sales Dashboard", "Image Classification Model"],
-    college: "Indian Institute of Technology",
-    courses: ["Deep Learning Specialization", "Databases with SQL"]
-  };
-  // --- END: Dynamic Resume Parsing Placeholder ---
-
-  Object.assign(user, {
-    // Merge new skills with existing skills
-    skills: [...new Set([...(user.skills || []), ...parsedData.skills])],
-    projects: [...new Set([...(user.projects || []), ...parsedData.projects])],
-    college: parsedData.college,
-    courses: [...new Set([...(user.courses || []), ...parsedData.courses])]
-  });
-  
-  await db.write();
-
+  // Acknowledge the file upload without processing it
   res.json({
     user,
-    message: "Resume uploaded and profile updated."
+    message: "Resume uploaded successfully. Please manually add the details."
   });
 });
 

@@ -18,23 +18,38 @@ const Dashboard = ({ user }) => {
     fetchReadiness();
   }, [user]);
 
+  const readinessScore = readiness ? readiness.readiness : 0;
+  const topCareer = readiness ? readiness.title : 'N/A';
+  const dashOffset = 440 - (440 * readinessScore) / 100;
+
   return (
     <div>
       <h1>Dashboard</h1>
       <p style={{ color: '#a3a3a3', marginBottom: '30px' }}>Welcome back, {user.name.split(' ')[0]}! Your personalized insights are ready.</p>
       
       <div className="dashboard-header-card">
-        <div className="readiness-section">
-          <h2>Job Readiness Index</h2>
-          <div className="progress-bar-container">
-            <div className="progress-bar" style={{ width: `${readiness ? readiness.readiness : 0}%` }}></div>
+        <div className="readiness-section-new">
+          <div className="readiness-circle">
+            <svg className="readiness-svg">
+              <circle className="readiness-bg" cx="80" cy="80" r="70"></circle>
+              <circle
+                className="readiness-progress"
+                cx="80"
+                cy="80"
+                r="70"
+                style={{ strokeDashoffset: dashOffset }}
+              ></circle>
+            </svg>
+            <div className="readiness-score-new">
+              {readinessScore}%
+            </div>
           </div>
-          <p className="readiness-score">
-            {readiness ? `${readiness.readiness}% Ready` : 'Calculating...'}
-          </p>
-          <p className="readiness-label">
-            Your top matching career is: **{readiness ? readiness.title : 'N/A'}**
-          </p>
+          <div className="readiness-details">
+            <h2 className="readiness-details-title">Job Readiness Index</h2>
+            <p className="readiness-details-label">
+              Your top matching career is: **{topCareer}**
+            </p>
+          </div>
         </div>
       </div>
       

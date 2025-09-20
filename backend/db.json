@@ -51,6 +51,95 @@
       "interests": [
         "machine learning"
       ]
+    },
+    {
+      "id": "user_dvo5ZEDE57SczVJjt78PST",
+      "name": "AYSHA",
+      "email": "ayshaa@gmail.com",
+      "password": "$2b$10$zUOUzN8sNM7z.dqg.KgZdOdxindlCq6EWXkX/pn9g0sMh/5LOp5py",
+      "skills": [
+        "JavaScript",
+        "Python",
+        "AWS",
+        "Node.js",
+        "SQL",
+        "Web Development"
+      ],
+      "projects": [
+        "Personal Portfolio Website",
+        "Full-Stack E-commerce App"
+      ],
+      "courses": [
+        "JavaScript Fundamentals",
+        "React JS"
+      ],
+      "college": "",
+      "lastUpdated": "2025-09-20T05:03:30.881Z",
+      "interests": []
+    },
+    {
+      "id": "user_ptjLKc59scjgHgczi1ffW2",
+      "name": "asha",
+      "email": "asha@gmail.com",
+      "password": "$2b$10$9ufw.3okda972AD8eR3.veCpuDY5Jh0nKX8N8jE5FcBlulntI0YgK",
+      "skills": [
+        "Python",
+        "c",
+        "Javascript",
+        "frontend",
+        "backend",
+        "Java"
+      ],
+      "projects": [
+        "portfolio",
+        "e-commerce website",
+        "google forms"
+      ],
+      "courses": [
+        "Intro to ML (Coursera)"
+      ],
+      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
+      "lastUpdated": "2025-09-20T05:06:57.250Z",
+      "interests": [
+        "Programming",
+        "full stack developer"
+      ]
+    },
+    {
+      "id": "user_5MSvxmaCFtrP6pzu31XHRJ",
+      "name": "PAVI",
+      "email": "pavi@gmail.com",
+      "password": "$2b$10$yTG9RXBTsi0kIU2Eb5UmZucX8GZg76o.2Vag3HmCpMAUrSfIbKc.m",
+      "skills": [],
+      "projects": [],
+      "courses": [],
+      "college": "",
+      "lastUpdated": "2025-09-20T05:07:49.380Z"
+    },
+    {
+      "id": "user_nVoVBxidRH3VbGDEMvmjh7",
+      "name": "VARSH",
+      "email": "varsh@gmail.com",
+      "password": "$2b$10$CKmxg2UolHJI/YKMc0Us9e0Rockif81tsiJi70KnFJt4TSErFSUVC",
+      "skills": [
+        "python",
+        "sql",
+        "react",
+        "full stack"
+      ],
+      "projects": [
+        "portfolio",
+        "e-commerce website"
+      ],
+      "courses": [
+        "introduction to machine learning"
+      ],
+      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
+      "lastUpdated": "2025-09-20T05:20:30.816Z",
+      "interests": [
+        "Programming",
+        "full stack developer"
+      ]
     }
   ],
   "careers": [
@@ -279,6 +368,13 @@
       "userName": "SUBIKSHA",
       "text": "sadfg",
       "createdAt": "2025-09-20T03:40:59.986Z"
+    },
+    {
+      "id": "feedback_1n1WK6JmD8TwKKyM4C57pG",
+      "userId": "user_ptjLKc59scjgHgczi1ffW2",
+      "userName": "asha",
+      "text": "good",
+      "createdAt": "2025-09-20T05:44:20.405Z"
     }
   ]
 }

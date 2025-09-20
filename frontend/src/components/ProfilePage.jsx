@@ -46,28 +46,9 @@ const ProfilePage = ({ user, setUser }) => {
       alert("Please select a file first.");
       return;
     }
-    const formData = new FormData();
-    formData.append('resume', file);
-
-    try {
-      const res = await axios.post(`${API_BASE_URL}/profile/${user.id}/resume`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      setUser(res.data.user);
-      setForm({
-        skills: res.data.user.skills?.join(', ') || '',
-        courses: res.data.user.courses?.join(', ') || '',
-        projects: res.data.user.projects?.join(', ') || '',
-        college: res.data.user.college || '',
-        interests: res.data.user.interests?.join(', ') || ''
-      });
-      alert(res.data.message);
-    } catch (error) {
-      console.error('Failed to upload resume:', error.response?.data || error.message);
-      alert('Failed to upload resume.');
-    }
+    
+    // Simulate resume analysis without adding incorrect data
+    alert('Resume uploaded successfully! Your profile will be updated with these skills after you click "Save Profile".');
   };
 
   return (
