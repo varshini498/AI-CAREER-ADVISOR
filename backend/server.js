@@ -189,7 +189,6 @@ app.get('/api/ai/skill-gap/:userId/:careerId', async (req, res) => {
   }
 
   const userSkills = new Set(user.skills || []);
-  const careerSkills = new Set(career.skills || []);
   
   const presentSkills = career.skills.filter(skill => userSkills.has(skill));
   const missingSkills = career.skills.filter(skill => !userSkills.has(skill));
@@ -244,7 +243,34 @@ app.post('/api/mentor/contact', async (req, res) => {
   res.json({ message: 'Contact request sent successfully.' });
 });
 
-// --- AI ROUTES ---
+// --- AI INTERVIEW COACH ROUTES ---
+const interviewQuestions = {
+  'data_scientist': "Tell me about a time you used data to solve a problem. What was the outcome?",
+  'ai_engineer': "Describe a machine learning model you built. What challenges did you face?",
+  'full_stack_developer': "Explain a RESTful API you've built. How did you handle data validation?",
+};
+
+const interviewFeedback = {
+  'data_scientist': "Good answer! You clearly explained the problem and solution. Try to add more detail on the specific libraries or algorithms you used next time.",
+  'ai_engineer': "Excellent! You provided good technical depth. For future questions, also mention how you might optimize the model for production.",
+  'full_stack_developer': "Solid response. You covered the core concepts. To improve, discuss how you would scale the API to handle more users."
+};
+
+app.get('/api/ai/interview-coach/question/:careerId', (req, res) => {
+  const { careerId } = req.params;
+  const question = interviewQuestions[careerId] || "Tell me about yourself.";
+  res.json({ question });
+});
+
+app.post('/api/ai/interview-coach/feedback/:careerId', (req, res) => {
+  const { careerId } = req.params;
+  const { answer } = req.body;
+  const feedback = interviewFeedback[careerId] || "Thank you for your answer. You can improve by providing more specific details.";
+  res.json({ feedback });
+});
+
+
+// --- AI ROADMAP ROUTES ---
 app.post('/api/ai/roadmap', async (req, res) => {
   const { careerId, userId } = req.body;
   const db = req.db;

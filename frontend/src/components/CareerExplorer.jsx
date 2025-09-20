@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import InterviewCoachModal from './InterviewCoachModal'; // NEW
 
 const API_BASE_URL = 'http://localhost:4000/api';
 
@@ -7,6 +8,8 @@ const CareerExplorer = ({ user }) => {
   const [careers, setCareers] = useState([]);
   const [roadmap, setRoadmap] = useState(null);
   const [skillGap, setSkillGap] = useState(null);
+  const [showInterviewModal, setShowInterviewModal] = useState(false); // NEW
+  const [selectedCareer, setSelectedCareer] = useState(null); // NEW
 
   useEffect(() => {
     const fetchCareers = async () => {
@@ -43,6 +46,11 @@ const CareerExplorer = ({ user }) => {
     }
   };
 
+  const openInterviewCoach = (career) => {
+    setSelectedCareer(career);
+    setShowInterviewModal(true);
+  };
+
   return (
     <div>
       <h1>Career Explorer</h1>
@@ -63,6 +71,9 @@ const CareerExplorer = ({ user }) => {
                 </button>
                 <button style={{ backgroundColor: '#6366f1', color: 'white', padding: '12px 24px', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }} onClick={() => generateRoadmap(career.id)}>
                   Get Roadmap
+                </button>
+                <button style={{ backgroundColor: '#34d399', color: 'white', padding: '12px 24px', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }} onClick={() => openInterviewCoach(career)}>
+                  Interview Coach
                 </button>
               </div>
             </div>
@@ -166,6 +177,13 @@ const CareerExplorer = ({ user }) => {
             </div>
           </div>
         </div>
+      )}
+      
+      {showInterviewModal && selectedCareer && (
+        <InterviewCoachModal 
+          career={selectedCareer} 
+          onClose={() => setShowInterviewModal(false)}
+        />
       )}
     </div>
   );
