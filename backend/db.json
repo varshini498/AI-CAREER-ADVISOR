@@ -1,0 +1,277 @@
+{
+  "users": [
+    {
+      "id": "user_vn5fCziwsu97VAEpGtwe7B",
+      "name": "AYSHA",
+      "email": "aysha@gmail.com",
+      "password": "$2b$10$w4/n3jOgkpE8QkWq7B75g.uMn9hUCpoVahcMKiITO8lKkF5l7H0qm",
+      "skills": [
+        "Python",
+        "C",
+        "JavaScript",
+        "React",
+        "sql",
+        "frontend"
+      ],
+      "projects": [
+        "portfolio",
+        "e-commerce website"
+      ],
+      "courses": [
+        "Intro to ML (Coursera)"
+      ],
+      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
+      "lastUpdated": "2025-09-19T06:30:39.553Z",
+      "interests": [
+        "Programming",
+        "full stack developer"
+      ]
+    },
+    {
+      "id": "user_kEsS6wNZTpM9pzkUNa7Nqv",
+      "name": "SUBIKSHA",
+      "email": "subi@gmail.com",
+      "password": "$2b$10$EOl3MEnfifQCB0tHJfLWfe44W8Z1xDZSI0FiPHY2odkMbT.2bgyPG",
+      "skills": [
+        "Python",
+        "Data Analysis",
+        "sql",
+        "react",
+        "javascript"
+      ],
+      "projects": [
+        "portfoio",
+        "e-commerce website"
+      ],
+      "courses": [
+        "introduction to ml"
+      ],
+      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
+      "lastUpdated": "2025-09-19T07:44:13.129Z",
+      "interests": [
+        "machine learning"
+      ]
+    }
+  ],
+  "careers": [
+    {
+      "id": "data_scientist",
+      "title": "Data Scientist",
+      "skills": [
+        "Python",
+        "Statistics",
+        "Machine Learning",
+        "SQL"
+      ],
+      "avgSalaryLPA": 12,
+      "growth": "High",
+      "description": "Extract insights from data, build predictive models, and deploy solutions to solve business problems."
+    },
+    {
+      "id": "ai_engineer",
+      "title": "AI Engineer",
+      "skills": [
+        "Deep Learning",
+        "TensorFlow",
+        "PyTorch",
+        "Python",
+        "NLP"
+      ],
+      "avgSalaryLPA": 15,
+      "growth": "High",
+      "description": "Design, build, and maintain AI models and systems. Focus on algorithms and computational efficiency."
+    },
+    {
+      "id": "full_stack_developer",
+      "title": "Full Stack Developer",
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "REST API"
+      ],
+      "avgSalaryLPA": 9,
+      "growth": "High",
+      "description": "Develop and manage both frontend and backend of web applications. Expertise in the MERN stack is in high demand."
+    },
+    {
+      "id": "devops_engineer",
+      "title": "DevOps Engineer",
+      "skills": [
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "CI/CD",
+        "Git"
+      ],
+      "avgSalaryLPA": 11,
+      "growth": "High",
+      "description": "Bridge the gap between development and operations. Focus on automating and optimizing the software delivery process."
+    },
+    {
+      "id": "cyber_security_analyst",
+      "title": "Cyber Security Analyst",
+      "skills": [
+        "Network Security",
+        "Penetration Testing",
+        "Cryptography",
+        "Ethical Hacking"
+      ],
+      "avgSalaryLPA": 10,
+      "growth": "High",
+      "description": "Protect an organization's computer systems and networks from threats. Monitor for security breaches and respond to attacks."
+    },
+    {
+      "id": "game_developer",
+      "title": "Game Developer",
+      "skills": [
+        "C++",
+        "Unity",
+        "Game Design",
+        "3D Modeling"
+      ],
+      "avgSalaryLPA": 7,
+      "growth": "Medium",
+      "description": "Design and code video games, from concept to final product. Work on graphics, gameplay, and user interface."
+    }
+  ],
+  "hidden_opportunities": [
+    {
+      "id": "space_tech_engineer",
+      "title": "Space Tech Engineer",
+      "avgSalaryLPA": 15,
+      "growth": "High",
+      "whyUnknown": "Niche startups and ISRO programs",
+      "company": "Agnikul, Skyroot",
+      "jobs": [
+        "Propulsion Engineer",
+        "Satellite Design Specialist"
+      ],
+      "internships": [
+        "ISRO Internships",
+        "Agnikul Summer Intern"
+      ]
+    },
+    {
+      "id": "ev_battery_specialist",
+      "title": "EV Battery Specialist",
+      "avgSalaryLPA": 8,
+      "growth": "High",
+      "whyUnknown": "New industry, specialized demand",
+      "company": "Ola Electric, Tata Motors",
+      "jobs": [
+        "Battery Engineer",
+        "BMS Software Developer"
+      ],
+      "internships": [
+        "Ola Electric Intern",
+        "Tata Motors Trainee"
+      ]
+    },
+    {
+      "id": "ethical_ai_governance_officer",
+      "title": "Ethical AI Governance Officer",
+      "avgSalaryLPA": 16,
+      "growth": "High",
+      "whyUnknown": "Emerging role in tech policy",
+      "company": "Google, Microsoft",
+      "jobs": [
+        "AI Policy Analyst",
+        "Ethical AI Architect"
+      ],
+      "internships": [
+        "Google AI Intern",
+        "Microsoft Responsible AI"
+      ]
+    },
+    {
+      "id": "climate_data_scientist",
+      "title": "Climate Data Scientist",
+      "avgSalaryLPA": 13,
+      "growth": "High",
+      "whyUnknown": "Emerging in renewable energy sector",
+      "company": "ReNew Power, Adani Green",
+      "jobs": [
+        "Climate Risk Analyst",
+        "Renewable Energy Modeler"
+      ],
+      "internships": [
+        "ReNew Power Trainee"
+      ]
+    },
+    {
+      "id": "fintech_security_architect",
+      "title": "Fintech Security Architect",
+      "avgSalaryLPA": 18,
+      "growth": "High",
+      "whyUnknown": "High demand in India’s payments sector",
+      "company": "Paytm, PhonePe",
+      "jobs": [
+        "UPI Security Architect",
+        "Payment Gateway Analyst"
+      ],
+      "internships": [
+        "Paytm Security Intern"
+      ]
+    }
+  ],
+  "mentors": [
+    {
+      "id": "mentor_1",
+      "name": "Anita Rao",
+      "expertise": [
+        "Data Science",
+        "Machine Learning"
+      ],
+      "location": "Bengaluru",
+      "bio": "Ex-Amazon ML Engineer.",
+      "email": "anita@example.com"
+    },
+    {
+      "id": "mentor_2",
+      "name": "Ravi Kumar",
+      "expertise": [
+        "Full Stack Development",
+        "DevOps"
+      ],
+      "location": "Pune",
+      "bio": "Senior Engineer at a major tech company.",
+      "email": "ravi@example.com"
+    },
+    {
+      "id": "mentor_3",
+      "name": "Priya Sharma",
+      "expertise": [
+        "Cyber Security",
+        "Network Security"
+      ],
+      "location": "Delhi",
+      "bio": "Lead Security Analyst at a fintech firm.",
+      "email": "priya@example.com"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "feedback_bBbewuRuf2et2SWeT3BvpN",
+      "userId": "user_vn5fCziwsu97VAEpGtwe7B",
+      "userName": "AYSHA",
+      "text": "its good",
+      "createdAt": "2025-09-19T06:31:06.329Z"
+    },
+    {
+      "id": "feedback_ud6sGsH1eVz1G8aadCFLTr",
+      "userId": "user_vn5fCziwsu97VAEpGtwe7B",
+      "userName": "AYSHA",
+      "text": "nice",
+      "createdAt": "2025-09-19T06:33:33.794Z"
+    },
+    {
+      "id": "feedback_8C36SgXRC5MxXJRccKzRnM",
+      "userId": "user_kEsS6wNZTpM9pzkUNa7Nqv",
+      "userName": "SUBIKSHA",
+      "text": "nice",
+      "createdAt": "2025-09-19T07:45:12.317Z"
+    }
+  ]
+}
