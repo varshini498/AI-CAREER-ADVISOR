@@ -1,145 +1,15 @@
 {
   "users": [
     {
-      "id": "user_vn5fCziwsu97VAEpGtwe7B",
-      "name": "AYSHA",
-      "email": "aysha@gmail.com",
-      "password": "$2b$10$w4/n3jOgkpE8QkWq7B75g.uMn9hUCpoVahcMKiITO8lKkF5l7H0qm",
-      "skills": [
-        "Python",
-        "C",
-        "JavaScript",
-        "React",
-        "sql",
-        "frontend"
-      ],
-      "projects": [
-        "portfolio",
-        "e-commerce website"
-      ],
-      "courses": [
-        "Intro to ML (Coursera)"
-      ],
-      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
-      "lastUpdated": "2025-09-19T06:30:39.553Z",
-      "interests": [
-        "Programming",
-        "full stack developer"
-      ]
-    },
-    {
-      "id": "user_kEsS6wNZTpM9pzkUNa7Nqv",
-      "name": "SUBIKSHA",
-      "email": "subi@gmail.com",
-      "password": "$2b$10$EOl3MEnfifQCB0tHJfLWfe44W8Z1xDZSI0FiPHY2odkMbT.2bgyPG",
-      "skills": [
-        "Python",
-        "Data Analysis",
-        "sql",
-        "react",
-        "javascript"
-      ],
-      "projects": [
-        "portfoio",
-        "e-commerce website"
-      ],
-      "courses": [
-        "introduction to ml"
-      ],
-      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
-      "lastUpdated": "2025-09-19T07:44:13.129Z",
-      "interests": [
-        "machine learning"
-      ]
-    },
-    {
-      "id": "user_dvo5ZEDE57SczVJjt78PST",
-      "name": "AYSHA",
-      "email": "ayshaa@gmail.com",
-      "password": "$2b$10$zUOUzN8sNM7z.dqg.KgZdOdxindlCq6EWXkX/pn9g0sMh/5LOp5py",
-      "skills": [
-        "JavaScript",
-        "Python",
-        "AWS",
-        "Node.js",
-        "SQL",
-        "Web Development"
-      ],
-      "projects": [
-        "Personal Portfolio Website",
-        "Full-Stack E-commerce App"
-      ],
-      "courses": [
-        "JavaScript Fundamentals",
-        "React JS"
-      ],
-      "college": "",
-      "lastUpdated": "2025-09-20T05:03:30.881Z",
-      "interests": []
-    },
-    {
-      "id": "user_ptjLKc59scjgHgczi1ffW2",
+      "id": "user_tmomqJheBzZuxsQo1LSp5J",
       "name": "asha",
       "email": "asha@gmail.com",
-      "password": "$2b$10$9ufw.3okda972AD8eR3.veCpuDY5Jh0nKX8N8jE5FcBlulntI0YgK",
-      "skills": [
-        "Python",
-        "c",
-        "Javascript",
-        "frontend",
-        "backend",
-        "Java"
-      ],
-      "projects": [
-        "portfolio",
-        "e-commerce website",
-        "google forms"
-      ],
-      "courses": [
-        "Intro to ML (Coursera)"
-      ],
-      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
-      "lastUpdated": "2025-09-20T05:06:57.250Z",
-      "interests": [
-        "Programming",
-        "full stack developer"
-      ]
-    },
-    {
-      "id": "user_5MSvxmaCFtrP6pzu31XHRJ",
-      "name": "PAVI",
-      "email": "pavi@gmail.com",
-      "password": "$2b$10$yTG9RXBTsi0kIU2Eb5UmZucX8GZg76o.2Vag3HmCpMAUrSfIbKc.m",
+      "password": "$2b$10$NT8ThhDgW/bgeaKYiT7MU.Ob/poLHkpAmUkf0J5sXc83KvDBwt.HO",
       "skills": [],
       "projects": [],
       "courses": [],
       "college": "",
-      "lastUpdated": "2025-09-20T05:07:49.380Z"
-    },
-    {
-      "id": "user_nVoVBxidRH3VbGDEMvmjh7",
-      "name": "VARSH",
-      "email": "varsh@gmail.com",
-      "password": "$2b$10$CKmxg2UolHJI/YKMc0Us9e0Rockif81tsiJi70KnFJt4TSErFSUVC",
-      "skills": [
-        "python",
-        "sql",
-        "react",
-        "full stack"
-      ],
-      "projects": [
-        "portfolio",
-        "e-commerce website"
-      ],
-      "courses": [
-        "introduction to machine learning"
-      ],
-      "college": "BANNARI AMMAN INSTITUTE OF TECHNOLOGY",
-      "lastUpdated": "2025-09-20T05:20:30.816Z",
-      "interests": [
-        "Programming",
-        "full stack developer"
-      ]
+      "lastUpdated": "2025-09-20T06:32:41.741Z"
     }
   ],
   "careers": [
@@ -303,6 +173,51 @@
       "internships": [
         "Paytm Security Intern"
       ]
+    },
+    {
+      "id": "urban_farming_specialist",
+      "title": "Urban Farming Specialist",
+      "avgSalaryLPA": 6,
+      "growth": "Medium",
+      "whyUnknown": "Growing demand for sustainable food systems",
+      "company": "Agri-Tech Startups",
+      "jobs": [
+        "Vertical Farm Manager",
+        "Hydroponics Consultant"
+      ],
+      "internships": [
+        "Local Greenhouses"
+      ]
+    },
+    {
+      "id": "biomedical_data_scientist",
+      "title": "Biomedical Data Scientist",
+      "avgSalaryLPA": 14,
+      "growth": "High",
+      "whyUnknown": "Intersection of healthcare and tech",
+      "company": "Cipla, Dr. Reddy's Lab",
+      "jobs": [
+        "Clinical Data Analyst",
+        "Genomics Researcher"
+      ],
+      "internships": [
+        "Pharma R&D"
+      ]
+    },
+    {
+      "id": "blockchain_developer",
+      "title": "Blockchain Developer",
+      "avgSalaryLPA": 18,
+      "growth": "High",
+      "whyUnknown": "New and specialized fintech roles",
+      "company": "Coinbase, Binance",
+      "jobs": [
+        "Smart Contract Developer",
+        "dApp Engineer"
+      ],
+      "internships": [
+        "Crypto Startups"
+      ]
     }
   ],
   "mentors": [
@@ -338,43 +253,310 @@
       "location": "Delhi",
       "bio": "Lead Security Analyst at a fintech firm.",
       "email": "priya@example.com"
+    },
+    {
+      "id": "mentor_4",
+      "name": "Karthik Reddy",
+      "expertise": [
+        "Space Tech",
+        "Aerospace Engineering"
+      ],
+      "location": "Hyderabad",
+      "bio": "Founder of a space tech startup.",
+      "email": "karthik@example.com"
+    },
+    {
+      "id": "mentor_5",
+      "name": "Sneha Gupta",
+      "expertise": [
+        "Biomedical Engineering",
+        "Data Science"
+      ],
+      "location": "Mumbai",
+      "bio": "Senior Data Scientist in the healthcare sector.",
+      "email": "sneha@example.com"
     }
   ],
-  "feedback": [
-    {
-      "id": "feedback_bBbewuRuf2et2SWeT3BvpN",
-      "userId": "user_vn5fCziwsu97VAEpGtwe7B",
-      "userName": "AYSHA",
-      "text": "its good",
-      "createdAt": "2025-09-19T06:31:06.329Z"
-    },
-    {
-      "id": "feedback_ud6sGsH1eVz1G8aadCFLTr",
-      "userId": "user_vn5fCziwsu97VAEpGtwe7B",
-      "userName": "AYSHA",
-      "text": "nice",
-      "createdAt": "2025-09-19T06:33:33.794Z"
-    },
-    {
-      "id": "feedback_8C36SgXRC5MxXJRccKzRnM",
-      "userId": "user_kEsS6wNZTpM9pzkUNa7Nqv",
-      "userName": "SUBIKSHA",
-      "text": "nice",
-      "createdAt": "2025-09-19T07:45:12.317Z"
-    },
-    {
-      "id": "feedback_uEqXTVnSHDt3ZykJQ1sBW1",
-      "userId": "user_kEsS6wNZTpM9pzkUNa7Nqv",
-      "userName": "SUBIKSHA",
-      "text": "sadfg",
-      "createdAt": "2025-09-20T03:40:59.986Z"
-    },
-    {
-      "id": "feedback_1n1WK6JmD8TwKKyM4C57pG",
-      "userId": "user_ptjLKc59scjgHgczi1ffW2",
-      "userName": "asha",
-      "text": "good",
-      "createdAt": "2025-09-20T05:44:20.405Z"
-    }
-  ]
+  "feedback": [],
+  "mentor_contacts": [],
+  "project_ideas": {
+    "beginner": [
+      {
+        "id": "p1",
+        "title": "Personal Portfolio Website",
+        "description": "A simple static site to showcase your projects and skills.",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Git"
+        ],
+        "roadmap": {
+          "frontend": "Build UI with HTML/CSS. Use JavaScript for interactivity.",
+          "backend": "Not needed for a static site.",
+          "references": [
+            "Video: 'Build a Personal Website from Scratch' on YouTube"
+          ],
+          "duration": "1-2 weeks"
+        }
+      },
+      {
+        "id": "p2",
+        "title": "To-Do List App",
+        "description": "A basic web app that allows users to add, edit, and delete tasks.",
+        "skills": [
+          "React",
+          "State Management",
+          "Local Storage"
+        ],
+        "roadmap": {
+          "frontend": "Use React components for the list and input field.",
+          "backend": "Use local storage to save tasks in the browser.",
+          "references": [
+            "Video: 'React To-Do App Tutorial' on YouTube"
+          ],
+          "duration": "1 week"
+        }
+      },
+      {
+        "id": "p3",
+        "title": "Weather App",
+        "description": "Fetches weather data from a public API and displays it for a given city.",
+        "skills": [
+          "JavaScript (Fetch API)",
+          "HTML",
+          "CSS"
+        ],
+        "roadmap": {
+          "frontend": "Design UI with HTML/CSS.",
+          "backend": "Use the OpenWeatherMap API to get data.",
+          "references": [
+            "API Documentation: OpenWeatherMap"
+          ],
+          "duration": "1 week"
+        }
+      },
+      {
+        "id": "p4",
+        "title": "Data Cleaning Script",
+        "description": "A Python script that takes a raw dataset and cleans it by handling missing values and duplicates.",
+        "skills": [
+          "Python",
+          "Pandas"
+        ],
+        "roadmap": {
+          "frontend": "Not needed.",
+          "backend": "Write a Python script to import, clean, and export the data.",
+          "references": [
+            "Course: 'Python for Data Science' on Coursera"
+          ],
+          "duration": "1 week"
+        }
+      },
+      {
+        "id": "p5",
+        "title": "Quiz Application",
+        "description": "An app that presents a series of multiple-choice questions and scores the user's performance.",
+        "skills": [
+          "JavaScript",
+          "DOM Manipulation",
+          "Arrays"
+        ],
+        "roadmap": {
+          "frontend": "Build the quiz interface with dynamic HTML.",
+          "backend": "Use JavaScript to manage questions and calculate score.",
+          "references": [
+            "Video: 'JavaScript Quiz App Tutorial' on YouTube"
+          ],
+          "duration": "1-2 weeks"
+        }
+      }
+    ],
+    "intermediate": [
+      {
+        "id": "p6",
+        "title": "E-commerce Recommender",
+        "description": "A full-stack application that suggests products to users based on their browsing history.",
+        "skills": [
+          "Python",
+          "Flask",
+          "React",
+          "MongoDB"
+        ],
+        "roadmap": {
+          "frontend": "Create React UI for browsing products.",
+          "backend": "Build a Flask API to serve product data and recommendations. Use MongoDB.",
+          "references": [
+            "Course: 'Building a Recommender System' on Coursera"
+          ],
+          "duration": "3-4 weeks"
+        }
+      },
+      {
+        "id": "p7",
+        "title": "Real-time Chat App",
+        "description": "A web application that allows multiple users to chat in real time.",
+        "skills": [
+          "Node.js",
+          "Express",
+          "WebSockets",
+          "React"
+        ],
+        "roadmap": {
+          "frontend": "Build React UI for chat.",
+          "backend": "Set up a Node.js server with WebSockets for real-time communication.",
+          "references": [
+            "Video: 'Build a Real-time Chat App with MERN' on YouTube"
+          ],
+          "duration": "3 weeks"
+        }
+      },
+      {
+        "id": "p8",
+        "title": "Movie Recommendation Engine",
+        "description": "A project that uses collaborative filtering to suggest movies to a user based on their ratings.",
+        "skills": [
+          "Python",
+          "Pandas",
+          "Machine Learning"
+        ],
+        "roadmap": {
+          "frontend": "Not needed.",
+          "backend": "Write Python script to analyze movie data.",
+          "references": [
+            "Article: 'Collaborative Filtering' on Towards Data Science"
+          ],
+          "duration": "2-3 weeks"
+        }
+      },
+      {
+        "id": "p9",
+        "title": "Personal Finance Tracker",
+        "description": "A web app to track income and expenses and visualize spending habits.",
+        "skills": [
+          "Node.js",
+          "React",
+          "Chart.js",
+          "Express"
+        ],
+        "roadmap": {
+          "frontend": "Design React UI with Chart.js for data visualization.",
+          "backend": "Build a REST API to manage transactions.",
+          "references": [
+            "Docs: Chart.js Official Documentation"
+          ],
+          "duration": "3-4 weeks"
+        }
+      },
+      {
+        "id": "p10",
+        "title": "Fintech Fraud Detection System",
+        "description": "Analyze transactional data to identify and flag fraudulent activity in a financial system.",
+        "skills": [
+          "Machine Learning (Scikit-learn)",
+          "Data Engineering"
+        ],
+        "roadmap": {
+          "frontend": "Not needed.",
+          "backend": "Build a Python script using Scikit-learn for fraud detection.",
+          "references": [
+            "Course: 'Fraud Detection in Finance' on Coursera"
+          ],
+          "duration": "4 weeks"
+        }
+      }
+    ],
+    "advanced": [
+      {
+        "id": "p11",
+        "title": "AI-Powered Code Reviewer",
+        "description": "A tool that integrates with Git to analyze code, identify bugs, and suggest improvements.",
+        "skills": [
+          "Generative AI",
+          "NLP",
+          "Python"
+        ],
+        "roadmap": {
+          "frontend": "Build a simple UI to display code and suggestions.",
+          "backend": "Integrate with a Generative AI API to analyze code snippets.",
+          "references": [
+            "Docs: Google Gemini API"
+          ],
+          "duration": "4-6 weeks"
+        }
+      },
+      {
+        "id": "p12",
+        "title": "Facial Recognition Security System",
+        "description": "A system that uses computer vision to identify and authenticate users in real time.",
+        "skills": [
+          "Deep Learning",
+          "OpenCV",
+          "Cloud Computing"
+        ],
+        "roadmap": {
+          "frontend": "Build a UI to display the camera feed.",
+          "backend": "Use OpenCV and a trained model to process video streams.",
+          "references": [
+            "Video: 'OpenCV for Beginners' on YouTube"
+          ],
+          "duration": "5-6 weeks"
+        }
+      },
+      {
+        "id": "p13",
+        "title": "Real-time Urban Air Quality Monitor",
+        "description": "Collects air quality data from public APIs and provides real-time predictions for major Indian cities.",
+        "skills": [
+          "Big Data (Apache Spark)",
+          "Cloud Computing (AWS/GCP)",
+          "Time Series Forecasting"
+        ],
+        "roadmap": {
+          "frontend": "Design a dashboard with real-time charts.",
+          "backend": "Set up a cloud pipeline to ingest and process data.",
+          "references": [
+            "Docs: Apache Spark Documentation"
+          ],
+          "duration": "6-8 weeks"
+        }
+      },
+      {
+        "id": "p14",
+        "title": "Automated Trading Bot",
+        "description": "A program that connects to a trading API and automatically makes trades based on predefined strategies.",
+        "skills": [
+          "Python",
+          "Financial APIs",
+          "Algorithmic Trading"
+        ],
+        "roadmap": {
+          "frontend": "Not needed.",
+          "backend": "Build a Python script to connect to a trading API.",
+          "references": [
+            "Blog: 'Algorithmic Trading for Beginners'"
+          ],
+          "duration": "4-6 weeks"
+        }
+      },
+      {
+        "id": "p15",
+        "title": "Medical Image Diagnosis Tool",
+        "description": "A tool that uses a deep learning model to detect anomalies in medical images (e.g., X-rays).",
+        "skills": [
+          "Deep Learning",
+          "Computer Vision",
+          "Medical Imaging"
+        ],
+        "roadmap": {
+          "frontend": "Build a UI for uploading images.",
+          "backend": "Train a model to classify medical images.",
+          "references": [
+            "Course: 'AI for Medicine' on Coursera"
+          ],
+          "duration": "6-8 weeks"
+        }
+      }
+    ]
+  }
 }

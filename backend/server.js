@@ -66,7 +66,30 @@ async function initDB() {
       "id": "mentor_5", "name": "Sneha Gupta", "expertise": ["Biomedical Engineering", "Data Science"], "location": "Mumbai", "bio": "Senior Data Scientist in the healthcare sector.", "email": "sneha@example.com"
     }],
     feedback: [],
-    mentor_contacts: []
+    mentor_contacts: [],
+    project_ideas: {
+      "beginner": [
+        { "id": "p1", "title": "Personal Portfolio Website", "description": "A simple static site to showcase your projects and skills.", "skills": ["HTML", "CSS", "JavaScript", "Git"], "roadmap": { "frontend": "Build UI with HTML/CSS. Use JavaScript for interactivity.", "backend": "Not needed for a static site.", "references": ["Video: 'Build a Personal Website from Scratch' on YouTube"], "duration": "1-2 weeks" } },
+        { "id": "p2", "title": "To-Do List App", "description": "A basic web app that allows users to add, edit, and delete tasks.", "skills": ["React", "State Management", "Local Storage"], "roadmap": { "frontend": "Use React components for the list and input field.", "backend": "Use local storage to save tasks in the browser.", "references": ["Video: 'React To-Do App Tutorial' on YouTube"], "duration": "1 week" } },
+        { "id": "p3", "title": "Weather App", "description": "Fetches weather data from a public API and displays it for a given city.", "skills": ["JavaScript (Fetch API)", "HTML", "CSS"], "roadmap": { "frontend": "Design UI with HTML/CSS.", "backend": "Use the OpenWeatherMap API to get data.", "references": ["API Documentation: OpenWeatherMap"], "duration": "1 week" } },
+        { "id": "p4", "title": "Data Cleaning Script", "description": "A Python script that takes a raw dataset and cleans it by handling missing values and duplicates.", "skills": ["Python", "Pandas"], "roadmap": { "frontend": "Not needed.", "backend": "Write a Python script to import, clean, and export the data.", "references": ["Course: 'Python for Data Science' on Coursera"], "duration": "1 week" } },
+        { "id": "p5", "title": "Quiz Application", "description": "An app that presents a series of multiple-choice questions and scores the user's performance.", "skills": ["JavaScript", "DOM Manipulation", "Arrays"], "roadmap": { "frontend": "Build the quiz interface with dynamic HTML.", "backend": "Use JavaScript to manage questions and calculate score.", "references": ["Video: 'JavaScript Quiz App Tutorial' on YouTube"], "duration": "1-2 weeks" } }
+      ],
+      "intermediate": [
+        { "id": "p6", "title": "E-commerce Recommender", "description": "A full-stack application that suggests products to users based on their browsing history.", "skills": ["Python", "Flask", "React", "MongoDB"], "roadmap": { "frontend": "Create React UI for browsing products.", "backend": "Build a Flask API to serve product data and recommendations. Use MongoDB.", "references": ["Course: 'Building a Recommender System' on Coursera"], "duration": "3-4 weeks" } },
+        { "id": "p7", "title": "Real-time Chat App", "description": "A web application that allows multiple users to chat in real time.", "skills": ["Node.js", "Express", "WebSockets", "React"], "roadmap": { "frontend": "Build React UI for chat.", "backend": "Set up a Node.js server with WebSockets for real-time communication.", "references": ["Video: 'Build a Real-time Chat App with MERN' on YouTube"], "duration": "3 weeks" } },
+        { "id": "p8", "title": "Movie Recommendation Engine", "description": "A project that uses collaborative filtering to suggest movies to a user based on their ratings.", "skills": ["Python", "Pandas", "Machine Learning"], "roadmap": { "frontend": "Not needed.", "backend": "Write Python script to analyze movie data.", "references": ["Article: 'Collaborative Filtering' on Towards Data Science"], "duration": "2-3 weeks" } },
+        { "id": "p9", "title": "Personal Finance Tracker", "description": "A web app to track income and expenses and visualize spending habits.", "skills": ["Node.js", "React", "Chart.js", "Express"], "roadmap": { "frontend": "Design React UI with Chart.js for data visualization.", "backend": "Build a REST API to manage transactions.", "references": ["Docs: Chart.js Official Documentation"], "duration": "3-4 weeks" } },
+        { "id": "p10", "title": "Fintech Fraud Detection System", "description": "Analyze transactional data to identify and flag fraudulent activity in a financial system.", "skills": ["Machine Learning (Scikit-learn)", "Data Engineering"], "roadmap": { "frontend": "Not needed.", "backend": "Build a Python script using Scikit-learn for fraud detection.", "references": ["Course: 'Fraud Detection in Finance' on Coursera"], "duration": "4 weeks" } }
+      ],
+      "advanced": [
+        { "id": "p11", "title": "AI-Powered Code Reviewer", "description": "A tool that integrates with Git to analyze code, identify bugs, and suggest improvements.", "skills": ["Generative AI", "NLP", "Python"], "roadmap": { "frontend": "Build a simple UI to display code and suggestions.", "backend": "Integrate with a Generative AI API to analyze code snippets.", "references": ["Docs: Google Gemini API"], "duration": "4-6 weeks" } },
+        { "id": "p12", "title": "Facial Recognition Security System", "description": "A system that uses computer vision to identify and authenticate users in real time.", "skills": ["Deep Learning", "OpenCV", "Cloud Computing"], "roadmap": { "frontend": "Build a UI to display the camera feed.", "backend": "Use OpenCV and a trained model to process video streams.", "references": ["Video: 'OpenCV for Beginners' on YouTube"], "duration": "5-6 weeks" } },
+        { "id": "p13", "title": "Real-time Urban Air Quality Monitor", "description": "Collects air quality data from public APIs and provides real-time predictions for major Indian cities.", "skills": ["Big Data (Apache Spark)", "Cloud Computing (AWS/GCP)", "Time Series Forecasting"], "roadmap": { "frontend": "Design a dashboard with real-time charts.", "backend": "Set up a cloud pipeline to ingest and process data.", "references": ["Docs: Apache Spark Documentation"], "duration": "6-8 weeks" } },
+        { "id": "p14", "title": "Automated Trading Bot", "description": "A program that connects to a trading API and automatically makes trades based on predefined strategies.", "skills": ["Python", "Financial APIs", "Algorithmic Trading"], "roadmap": { "frontend": "Not needed.", "backend": "Build a Python script to connect to a trading API.", "references": ["Blog: 'Algorithmic Trading for Beginners'"], "duration": "4-6 weeks" } },
+        { "id": "p15", "title": "Medical Image Diagnosis Tool", "description": "A tool that uses a deep learning model to detect anomalies in medical images (e.g., X-rays).", "skills": ["Deep Learning", "Computer Vision", "Medical Imaging"], "roadmap": { "frontend": "Build a UI for uploading images.", "backend": "Train a model to classify medical images.", "references": ["Course: 'AI for Medicine' on Coursera"], "duration": "6-8 weeks" } }
+      ]
+    }
   };
   await db.write();
 }
@@ -177,7 +200,12 @@ app.get('/api/careers/hidden', async (req, res) => {
   res.json({ hidden_opportunities: db.data.hidden_opportunities });
 });
 
-// New route for Skill Gap Analysis
+app.get('/api/projects/ideas', async (req, res) => {
+  const db = req.db;
+  await db.read();
+  res.json({ project_ideas: db.data.project_ideas });
+});
+
 app.get('/api/ai/skill-gap/:userId/:careerId', async (req, res) => {
   const db = req.db;
   await db.read();
@@ -200,7 +228,6 @@ app.get('/api/ai/skill-gap/:userId/:careerId', async (req, res) => {
   });
 });
 
-// --- MENTOR ROUTES ---
 app.post('/api/mentor/match', async (req, res) => {
   const db = req.db;
   const { userId } = req.body;
@@ -243,7 +270,6 @@ app.post('/api/mentor/contact', async (req, res) => {
   res.json({ message: 'Contact request sent successfully.' });
 });
 
-// --- AI INTERVIEW COACH ROUTES ---
 const interviewQuestions = {
   'data_scientist': "Tell me about a time you used data to solve a problem. What was the outcome?",
   'ai_engineer': "Describe a machine learning model you built. What challenges did you face?",
@@ -269,8 +295,6 @@ app.post('/api/ai/interview-coach/feedback/:careerId', (req, res) => {
   res.json({ feedback });
 });
 
-
-// --- AI ROADMAP ROUTES ---
 app.post('/api/ai/roadmap', async (req, res) => {
   const { careerId, userId } = req.body;
   const db = req.db;
@@ -295,7 +319,6 @@ app.post('/api/ai/roadmap', async (req, res) => {
   res.json({ roadmap });
 });
 
-// --- FEEDBACK ROUTE ---
 app.post('/api/feedback', async (req, res) => {
   const db = req.db;
   const { userId, text } = req.body;

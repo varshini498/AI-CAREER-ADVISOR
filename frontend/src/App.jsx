@@ -13,19 +13,11 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import FAQPage from './components/FAQPage';
 import FeedbackPage from './components/FeedbackPage';
+import ProjectIdeasPage from './components/ProjectIdeasPage';
 
 const App = () => {
   const [user, setUser] = useState(null);
-  
-  // Modified handleLogout function to add error handling
-  const handleLogout = () => {
-    try {
-      setUser(null);
-      alert('Logout successful!');
-    } catch (error) {
-      alert('Logout failed!');
-    }
-  };
+  const handleLogout = () => setUser(null);
 
   if (!user) {
     return (
@@ -53,6 +45,7 @@ const App = () => {
             <Route path="/hidden-jobs" element={<HiddenJobsPage user={user} />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/feedback" element={<FeedbackPage user={user} />} />
+            <Route path="/projects" element={<ProjectIdeasPage />} />
           </Routes>
         </main>
       </div>
@@ -85,6 +78,7 @@ const Sidebar = ({ user, onLogout }) => {
           <li><Link to="/careers"><i className="fas fa-briefcase"></i> Career Explorer</Link></li>
           <li><Link to="/mentors"><i className="fas fa-chalkboard-teacher"></i> Mentors</Link></li>
           <li><Link to="/hidden-jobs"><i className="fas fa-search-plus"></i> Hidden Jobs</Link></li>
+          <li><Link to="/projects"><i className="fas fa-lightbulb"></i> Project Ideas</Link></li>
           <li className="separator"></li>
           <li><Link to="/faq"><i className="fas fa-question-circle"></i> FAQ</Link></li>
           <li><Link to="/feedback"><i className="fas fa-comment-dots"></i> Feedback</Link></li>
