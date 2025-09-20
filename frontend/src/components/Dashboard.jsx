@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { BACKEND_URL } from './config'; // adjust path if inside components folder
+import { BACKEND_URL } from '../config'; // adjust path if inside components folder
 
 const API_BASE_URL = `${BACKEND_URL}/api`;
 const Dashboard = ({ user }) => {
