@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
-const API_BASE_URL = 'http://localhost:4000/api';
+import { BACKEND_URL } from './config'; // adjust path if inside components folder
+
+const API_BASE_URL = `${BACKEND_URL}/api`;
 
 const LoginPage = ({ setUser }) => {
   const [email, setEmail] = useState('');

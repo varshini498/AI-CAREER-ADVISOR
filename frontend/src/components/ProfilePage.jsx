@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:4000/api';
+import { BACKEND_URL } from './config'; // adjust path if inside components folder
+
+const API_BASE_URL = `${BACKEND_URL}/api`;
 
 const ProfilePage = ({ user, setUser }) => {
   const [form, setForm] = useState({
