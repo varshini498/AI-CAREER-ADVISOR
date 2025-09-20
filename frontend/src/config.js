@@ -1,2 +1,1 @@
-// src/config.js
-export const BACKEND_URL = "https://ai-career-advisor-2-n9mv.onrender.com";
+export const API_BASE_URL = "https://ai-career-advisor-8.onrender.com/api";
