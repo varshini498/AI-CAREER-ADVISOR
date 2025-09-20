@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import InterviewCoachModal from './InterviewCoachModal'; // NEW
+import InterviewCoachModal from './InterviewCoachModal.jsx'; // NEW
 
 const API_BASE_URL = 'http://localhost:4000/api';
 
