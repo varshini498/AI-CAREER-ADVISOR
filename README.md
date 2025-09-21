@@ -8,6 +8,7 @@ A personalized and dynamic AI-powered career advisor designed specifically for I
 - [Quickstart (Local Development)](#quickstart-local-development)
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
+- [Deployment](#deployment)
 - [Project Architecture](#project-architecture)
 - [Technologies Used](#technologies-used)
 - [License](#license)
@@ -89,6 +90,11 @@ Open your second terminal and follow these steps to start the Vue.js development
     npm run dev
     ```
     The frontend will be running, typically at `http://localhost:5173`. Open this URL in your browser to view the application.
+
+## Deployment
+
+The live version of the project is deployed at the following URL:
+[https://ai-career-advisor-9.onrender.com](https://ai-career-advisor-9.onrender.com)
 
 ## Project Architecture
 
